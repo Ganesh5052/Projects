@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+
+    <style media="screen">
+      body{
+        background-color: bisque;
+        font-size: 16px;
+        font-style: italic;
+        margin: 20px;
+      }
+      form{
+        background-color: darkkhaki;
+        width: 400px;
+        display: block;
+        padding: 20px 70px 30px;
+        margin: 15px auto 0;
+        border: 5px solid red;
+        border-radius: 10px;
+      }
+      input{
+        box-sizing: border-box;
+        padding: 10px;
+        margin: 3px;
+
+
+      }
+      form,h3{
+        text-decoration: underline;
+        text-shadow: 2px 2px red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="offset-lg-4 col-lg-6">
+          <form  method="POST">
+            {% csrf_token %}
+            <h3 class="center">Enter Your Data</h3>
+            <input type="text" name="fname" placeholder="First Name.." autocomplete="off"><br>
+            <input type="text" name="lname" placeholder="Last Name.." autocomplete="off"><br>
+            <input type="email" name="email" placeholder="Email ID.." autocomplete="off"><br>
+            <input type="num" name="mobile" placeholder="Mobile Num.." autocomplete="off"><br>
+            <input type="text" name="loc" placeholder="Location.." autocomplete="off"><br>
+            <input type="text" name="blood" placeholder="Blood Group.."><br>
+            <input type="submit" value="Save" class="btn btn-success">
+            <input type="reset" value="Cancel" class="btn btn-danger">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
